@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define a simple bean with id "myBean" -->
+    <bean id="alien" class="org.example.Alien" autowire="byType">
+       <!-- <constructor-arg value="22"/>--> <!-- if you want to call parameterized constructor-->
+<!--
+       <constructor-arg ref="laptop"/>
+-->
+        <property name="age" value="20"/> <!--for primitive-vale we add value-->
+        <property name="com" ref="laptop"/>  <!--for object we add ref-->
+    </bean>
+
+
+    <bean id="laptop" class="org.example.Laptop" />
+    <bean id="com" class="org.example.Desktop" primary="true"/>
+
+</beans>
