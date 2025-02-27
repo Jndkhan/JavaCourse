@@ -3,7 +3,7 @@ package org.example;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class Desktop implements Computer{
     public Desktop(){
         System.out.println("Desktop Object Created ..");
