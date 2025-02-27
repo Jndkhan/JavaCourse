@@ -3,21 +3,27 @@ package org.example;
 import org.example.config.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import javax.naming.Context;
-
-public class App 
-{
-    public static void main( String[] args )
-    {
+@Component
+public class App {
+    public static void main(String[] args) {
 
         /// Java Base Configuration
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+      /*  ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         Desktop dt = context.getBean("desktop",Desktop.class);
         dt.myLap();
 
+*/
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Alien obj = context.getBean(Alien.class);
+        obj.code();
+        obj.getAge();
 
 
         /// through Spring xml file

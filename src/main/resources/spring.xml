@@ -10,12 +10,15 @@
 <!--
        <constructor-arg ref="laptop"/>
 -->
-        <property name="age" value="20"/> <!--for primitive-vale we add value-->
-        <property name="com" ref="laptop"/>  <!--for object we add ref-->
+        <property name="age" value="20"></property> <!--for primitive-vale we add value-->
+        <property name="com">
+            <bean id="laptop" class="org.example.Laptop" primary="true" />
+
+        </property>  <!--for object we add ref-->
     </bean>
 
 
-    <bean id="laptop" class="org.example.Laptop" />
+
     <bean id="com" class="org.example.Desktop" primary="true"/>
 
 </beans>

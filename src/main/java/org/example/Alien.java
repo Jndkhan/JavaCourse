@@ -1,7 +1,14 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
 
+    @Value("23")
     private int age;
 
     public Alien(int age, Computer com) {
@@ -9,6 +16,8 @@ public class Alien {
         this.com = com;
     }
 
+
+    @Autowired
     private Computer com;
 
     public Alien(){
